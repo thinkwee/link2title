@@ -1,0 +1,12 @@
+aiohttp
+asyncio
+dashscope
+google-generativeai
+llama-index
+nest-asyncio
+openai
+qianfan
+pyyaml
+tenacity
+tiktoken
+urllib3

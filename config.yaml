@@ -1,0 +1,13 @@
+backend:
+  provider: glm # ollama, openai, deepseek, gemini, mixed, qwen, ernie, glm, spark, hunyuan
+  google_api_key: YOUR_GOOGLE_API_KEY_HERE # only for gemini
+  openai_api_key: YOUR_OPENAI_KEY_HERE # only for openai
+  deepseek_api_key: YOUR_DEEPSEEK_API_KEY_HERE # only for deepseek
+  qwen_api_key: YOUR_QWEN_API_KEY_HERE # only for qwen
+  QIANFAN_ACCESS_KEY: YOUR_QIANFAN_ACCESS_KEY_HERE # only for baidu qianfan
+  QIANFAN_SECRET_KEY: YOUR_QIANFAN_SECRET_KEY_HERE # only for baidu qianfan
+  glm_api_key: YOUR_GLM_API_KEY_HERE # only for glm
+  hunyuan_api_key: YOUR_HUANYUAN_API_KEY_HERE # only for hunyuan
+  spark_api_key: YOUR_SPARK_API_KEY_HERE # only for spark
+  ollama_model_name: qwen2.5:1.5b # only for ollama
+  base_url: # only for openai-compatible api
