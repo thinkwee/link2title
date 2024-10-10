@@ -3,14 +3,13 @@ import asyncio
 import aiohttp
 from tenacity import retry, stop_after_attempt, wait_exponential
 import yaml
-import time
 from asyncio import Semaphore
 import sys
 import nest_asyncio
 from urllib.parse import urlparse
 
 # Import all backend modules
-from backend import third_party, gpt, ollama, gemini
+from backend import third_party, gpt, ollama
 
 # Load configuration
 with open("config.yaml", "r") as config_file:
@@ -33,12 +32,12 @@ async def query_llm(prompt):
     """
     if backend_provider == "ollama":
         return await ollama.query_ollama(prompt)
-    elif backend_provider == "openai":
+    elif backend_provider == "gpt3":
         return await gpt.query_gpt(prompt)
+    elif backend_provider == "gpt4":
+        return await gpt.query_gpt4(prompt)
     elif backend_provider == "deepseek":
         return await third_party.query_deepseek(prompt)
-    elif backend_provider == "gemini":
-        return await gemini.query_gemini(prompt)
     elif backend_provider == "qwen":
         return await third_party.query_qwen(prompt)
     elif backend_provider == "ernie":
@@ -49,9 +48,6 @@ async def query_llm(prompt):
         return await third_party.query_spark(prompt)
     elif backend_provider == "hunyuan":
         return await third_party.query_hunyuan(prompt)
-    elif backend_provider == "mixed":
-        # Implement mixed backend logic here
-        pass
     else:
         raise ValueError(f"Unsupported backend provider: {backend_provider}")
 

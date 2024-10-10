@@ -5,7 +5,7 @@ This project is a Python script that processes Markdown files, automatically rep
 ## Features
 
 - Asynchronous processing of URLs for improved performance
-- Supports multiple backend LLM providers (OpenAI, Ollama, DeepSeek, Gemini, etc.)
+- Supports multiple backend LLM providers
 - Uses Jina AI's content extraction service for reliable web scraping
 - Implements retry logic and rate limiting to handle network issues
 
@@ -49,10 +49,9 @@ After running `run.py` on this README, these links would be transformed into mor
 
 ## Supported LLM Backends
 
-- OpenAI (GPT)
+- OpenAI (GPT3/4)
 - Ollama
 - DeepSeek
-- Google Gemini
 - Qwen
 - ERNIE
 - GLM

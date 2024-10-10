@@ -96,8 +96,7 @@ async def query_ernie(prompt):
     chat_comp = qianfan.ChatCompletion()
 
     resp = await asyncio.to_thread(chat_comp.do, model="ERNIE-Speed-128K", messages=[
-        {"role": "system", "content": "You are a helpful assistant that provides concise titles and summaries."},
-        {"role": "user", "content": f"Please provide a concise title for the following text:\n\n{prompt}\n\nYou must return only the title."}
+        {"role": "user", "content": "You are a helpful assistant that provides concise titles and summaries." + f"Please provide a concise title for the following text:\n\n{prompt}\n\nYou must return only the title."},
     ])
 
     return resp["body"]["result"]
